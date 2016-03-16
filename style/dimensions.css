@@ -111,6 +111,7 @@ button { background-color: #FFF; }
   margin-top: -250px !important;
   position: absolute;
 }
+
 .sweet-alert button { padding: 0 30px; }
 .sweet-alert button:focus { color: #FFF; }
 .sweet-alert button:hover { color: #333; }
