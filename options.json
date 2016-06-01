@@ -53,6 +53,7 @@
       "height": ""
     }
   },
+
   "Events": {
     "Masthead (980 x 350)": {
       "width": "980",
@@ -63,12 +64,7 @@
       "height": "206"
     }
   },
-  "Email": {
-    "Updates Email Image (270 x 200)": {
-      "width": "270",
-      "height": "200"
-    }
-  },
+
   "Blogs": {
     "Small Featured (740 x 410)": {
       "width": "740",
@@ -79,6 +75,25 @@
       "height": "275"
     }
   },
+
+  "Digital Signage": {
+    "Background (1920 x 1080)": {
+      "width": "1920",
+      "height": "1080"
+    },
+    "Foreground (912 x 1080)": {
+      "width": "912",
+      "height": "1080"
+    }
+  },
+
+  "Email": {
+    "Updates Email Image (270 x 200)": {
+      "width": "270",
+      "height": "200"
+    }
+  },
+
   "Facebook": {
     "Cover Photo (851 x 315)": {
       "width": "851",
@@ -105,6 +120,7 @@
       "height": ""
     }
   },
+
   "Twitter": {
     "Header (1500 x 500)": {
       "width": "1500",
@@ -119,6 +135,7 @@
       "height": "220"
     }
   },
+
   "Instagram": {
     "Profile (161 x 161)": {
       "width": "161",
