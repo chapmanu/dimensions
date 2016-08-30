@@ -95,8 +95,8 @@
   },
 
   "Facebook": {
-    "Cover Photo (851 x 315)": {
-      "width": "851",
+    "Cover Photo (828 x 315)": {
+      "width": "828",
       "height": "315"
     },
     "Profile Picture (180 x 180)": {
@@ -137,9 +137,9 @@
   },
 
   "Instagram": {
-    "Profile (161 x 161)": {
-      "width": "161",
-      "height": "161"
+    "Profile (150 x 150)": {
+      "width": "150",
+      "height": "150"
     },
     "Square (1080 x 1080)": {
       "width": "1080",
