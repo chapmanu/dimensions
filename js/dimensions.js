@@ -41,7 +41,8 @@ $(document).ready(function() {
     this.showResult = function() {
       $uploadCrop.result({
         type: 'canvas', 
-        size: 'viewport'
+        size: 'viewport',
+        format: 'jpeg'
       }).then(function(img) {
         $(".download-crop").prop('href', img);
         Resize.popupResult({
