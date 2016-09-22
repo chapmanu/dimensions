@@ -95,7 +95,7 @@ $(document).ready(function() {
       }
       if (result.src) {
         html = '<img src="' + result.src + '" />';
-        html += '<a href="' + result.src + '" style="display:none; id="download-crop" download="cropped-image.png"></a>';
+        html += '<a href="' + result.src + '" style="display:none; id="download-crop" download="cropped-image.jpg"></a>';
       }
       swal({
         title: 'Your Cropped Image',
