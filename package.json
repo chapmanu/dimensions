@@ -1,0 +1,23 @@
+{
+  "name": "dimensions",
+  "version": "1.0.0",
+  "description": "The one stop shop for all things related to image resizing on the Chapman University website network",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-mocha": "^1.0.4"
+  },
+  "scripts": {
+    "test": "grunt mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chapmanu/dimensions.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chapmanu/dimensions/issues"
+  },
+  "homepage": "https://github.com/chapmanu/dimensions#readme"
+}
