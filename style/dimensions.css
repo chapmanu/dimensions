@@ -199,3 +199,9 @@ button { background-color: #FFF; }
 #main-nav a:hover {
   background: #E5E5E5;
 }
+
+/* override croppie border which was adding px's to cropped photo*/
+.croppie-container .cr-viewport {
+  border: none;
+  box-shadow: 0 0 0 899px rgba(0, 0, 0, 0.7);
+}
