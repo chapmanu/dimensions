@@ -5,11 +5,15 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.5.0",
     "grunt": "^1.0.1",
-    "grunt-mocha": "^1.0.4"
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-mocha": "^1.0.4",
+    "grunt-mocha-phantomjs": "^4.0.0",
+    "phantomjs": "^1.9.16"
   },
   "scripts": {
-    "test": "grunt mocha"
+    "test": "grunt mocha_phantomjs"
   },
   "repository": {
     "type": "git",

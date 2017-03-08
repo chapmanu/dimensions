@@ -2,14 +2,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    mocha: {
-      all: ['test/test.html'],
-      options: {
-        run: true
-      }
+    mocha_phantomjs: {
+      all: ['test/test.html']
     }
   });
 
-  grunt.loadNpmTasks('grunt-mocha');
-  grunt.registerTask('default', ['mocha']);
+  grunt.loadNpmTasks('grunt-mocha-phantomjs');
+  grunt.registerTask('default', ['mocha_phantomjs']);
 };

@@ -7,7 +7,27 @@
   </head>
   <body>
     <div id="mocha"></div>
-    <script src="../node_modules/grunt-mocha/node_modules/mocha/mocha.js"></script>
-    <script> mocha.run(); </script>
+    <script type="text/javascript" src="../node_modules/grunt-mocha/node_modules/mocha/mocha.js"></script>
+    <script type="text/javascript" src="../node_modules/chai/chai.js"></script>
+    <script>
+      mocha.setup('bdd');
+      expect = chai.expect;
+      var should = chai.should();
+    </script>
+    <script type="text/javascript">
+      var require = {
+        baseUrl: "../",
+        paths: {
+          'jquery': "http://code.jquery.com/jquery-3.1.1.min",
+        },
+        shim: {
+          'jquery': {
+            export: "$"
+          }
+        },
+        deps: ['jquery']
+      }
+    </script>
+    <script type="text/javascript" data-main="test/test_runner.js" src="../node_modules/requirejs/require.js"></script>
   </body>
 </html>
