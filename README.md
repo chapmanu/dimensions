@@ -10,8 +10,15 @@ This is as simple as it gets. Clone the repository locally, navigate to the proj
 Install test dependencies:
 
   `npm install`
-    
-Run all tests:
-  
-    `npm test`
 
+Run all tests:
+
+  `npm test`
+
+### Deployment:
+Dimensions is hosted on GitHub pages which publishes from the `gh-pages` branch.
+After changes are pushed to the `master` branch, bring changes into `gh-pages` branch.
+
+    git checkout gh-pages
+    git rebase master
+    git push origin gh-pages
