@@ -40,13 +40,15 @@ $(document).ready(function() {
 
     this.showResult = function() {
       $uploadCrop.result({
-        type: 'canvas', 
+        type: 'blob',
         size: 'viewport',
         format: 'jpeg'
       }).then(function(img) {
-        $(".download-crop").prop('href', img);
+        var imageUrl = Resize.imageUrlFromBlob(img);
+
+        $(".download-crop").prop('href', imageUrl);
         Resize.popupResult({
-          src: img
+          src: imageUrl
         });
       });
     }
@@ -111,6 +113,11 @@ $(document).ready(function() {
         $(".download-crop")[0].click();
         location.reload();
       });
+    }
+
+    this.imageUrlFromBlob = function(blob) {
+      var urlCreator = window.URL || window.webkitURL;
+      return urlCreator.createObjectURL(blob);
     }
   }
 
