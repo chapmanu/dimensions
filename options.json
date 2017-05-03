@@ -87,10 +87,22 @@
     }
   },
 
-  "Email": {
-    "Updates Email Image (270 x 200)": {
-      "width": "270",
-      "height": "200"
+  "Newsletter": {
+    "Featured Story": {
+      "width": "260",
+      "height": "165"
+    },
+    "Announcement": {
+      "width": "265",
+      "height": "163"
+    },
+    "Event": {
+      "width": "140",
+      "height": "140"
+    },
+    "Beyond Chapman": {
+      "width": "175",
+      "height": "175"
     }
   },
 
