@@ -73,6 +73,10 @@
     "Blog Header (1680 x 275)": {
       "width": "1680",
       "height": "275"
+    },
+    "Large Featured (1200 x 700)": {
+      "width": "1200",
+      "height": "700"
     }
   },
 
