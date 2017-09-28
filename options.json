@@ -92,21 +92,25 @@
   },
 
   "Newsletter": {
-    "Featured Story": {
+    "Featured Story (260 x 165)": {
       "width": "260",
       "height": "165"
     },
-    "Announcement": {
-      "width": "265",
-      "height": "163"
+    "Announcement (260 x 165)": {
+      "width": "260",
+      "height": "165"
     },
-    "Event": {
+    "Event (140 x 140)": {
       "width": "140",
       "height": "140"
     },
-    "Beyond Chapman": {
+    "Beyond Chapman (175 x 175)": {
       "width": "175",
       "height": "175"
+    },
+    "Instagram (155 x 155)": {
+      "width": "155",
+      "height": "155"
     }
   },
 
