@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  const SMALL_CROPPING_WIDTH_LIMIT = 800;
+  const SMALL_CROPPING_HEIGHT_LIMIT = 800;
+
   var Resize = new function() {
 
     var $uploadCrop, $uploadedImage;
@@ -138,9 +141,12 @@ $(document).ready(function() {
   $(document).on('change', '#resize-select', function() { Resize.fillDimensionFields(this); });
   $(document).on('click', '.submit-btn', function(event) { Resize.downloadableResult(); });
   $(document).on('click', '.preview-result', '#user-width, #user-height', function() {
-    if (($("#user-height").val() <= 400 && $("#user-width").val() <= 400) && (Resize.originalHeight > 800 && Resize.originalWidth > 800)) {
-      alert("The image is too big to crop to the desired dimension. Please resize your image to 600x600 or under via photoshop or gimp.");
-    } else { Resize.showResult(); }
+    // Checks if the user selects dimensions that are <= 400x400, and if the original dimensions are greater than the limit for cropping small images.
+    if (($("#user-height").val() <= 400 && $("#user-width").val() <= 400) && (Resize.originalHeight > SMALL_CROPPING_HEIGHT_LIMIT && Resize.originalWidth > SMALL_CROPPING_WIDTH_LIMIT)) {
+      alert("This image is too large to resize without distortions.\n\nYou will need to resize the image to be no larger than " + SMALL_CROPPING_WIDTH_LIMIT + "x" + SMALL_CROPPING_HEIGHT_LIMIT + " using a photo editor like Photoshop or GIMP.");
+    } else {
+      Resize.showResult();
+    }
   });
 
   $(document).on('change', '#user-width, #user-height', function() {
