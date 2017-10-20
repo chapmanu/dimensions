@@ -1,6 +1,14 @@
 $(document).ready(function() {
-  const SMALL_CROPPING_WIDTH_LIMIT = 800;
-  const SMALL_CROPPING_HEIGHT_LIMIT = 800;
+  /*
+  These limits are needed to prevent users from using large images to crop really small images.
+  The ORIGINAL constants mark the largest images that can be used to crop images less than or
+  equal to the dimensions of the CROPPED constants.
+  See this issue for more details: https://github.com/chapmanu/dimensions/issues/29
+  */
+  const ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT = 800;
+  const ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT = 800;
+  const CROPPED_SMALL_IMAGE_WIDTH_LIMIT = 400;
+  const CROPPED_SMALL_IMAGE_HEIGHT_LIMIT = 400;
 
   var Resize = new function() {
 
@@ -141,9 +149,9 @@ $(document).ready(function() {
   $(document).on('change', '#resize-select', function() { Resize.fillDimensionFields(this); });
   $(document).on('click', '.submit-btn', function(event) { Resize.downloadableResult(); });
   $(document).on('click', '.preview-result', '#user-width, #user-height', function() {
-    // Checks if the user selects dimensions that are <= 400x400, and if the original dimensions are greater than the limit for cropping small images.
-    if (($("#user-height").val() <= 400 && $("#user-width").val() <= 400) && (Resize.originalHeight > SMALL_CROPPING_HEIGHT_LIMIT && Resize.originalWidth > SMALL_CROPPING_WIDTH_LIMIT)) {
-      alert("This image is too large to resize without distortions.\n\nYou will need to resize the image to be no larger than " + SMALL_CROPPING_WIDTH_LIMIT + "x" + SMALL_CROPPING_HEIGHT_LIMIT + " using a photo editor like Photoshop or GIMP.");
+    // Checks if the user selects dimensions that are less than or equal to "really small" image dimensions, and if the original dimensions are greater than the limit for cropping small images.
+    if (($("#user-height").val() <= CROPPED_SMALL_IMAGE_HEIGHT_LIMIT && $("#user-width").val() <= CROPPED_SMALL_IMAGE_WIDTH_LIMIT) && (Resize.originalHeight > ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT && Resize.originalWidth > ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT)) {
+      alert("This image is too large to resize without distortions.\n\nYou will need to resize the image to be no larger than " + ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT + "x" + ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT + " using a photo editor like Photoshop or GIMP.");
     } else {
       Resize.showResult();
     }
