@@ -136,8 +136,12 @@ $(document).ready(function() {
 
   $(document).on('change', '#dimension_image_upload', function() { Resize.readFile(this); });
   $(document).on('change', '#resize-select', function() { Resize.fillDimensionFields(this); });
-  $(document).on('click', '.preview-result', function() { Resize.showResult(); });
   $(document).on('click', '.submit-btn', function(event) { Resize.downloadableResult(); });
+  $(document).on('click', '.preview-result', '#user-width, #user-height', function() {
+    if (($("#user-height").val() <= 400 && $("#user-width").val() <= 400) && (Resize.originalHeight > 800 && Resize.originalWidth > 800)) {
+      alert("The image is too big to crop to the desired dimension. Please resize your image to 600x600 or under via photoshop or gimp.");
+    } else { Resize.showResult(); }
+  });
 
   $(document).on('change', '#user-width, #user-height', function() {
     if($("#user-width").val() > Resize.originalWidth) $("#user-width").val(Resize.originalWidth);
