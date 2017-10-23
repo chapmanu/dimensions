@@ -1,4 +1,15 @@
 $(document).ready(function() {
+  /*
+  These limits are needed to prevent users from using large images to crop really small images.
+  The ORIGINAL constants mark the largest images that can be used to crop images less than or
+  equal to the dimensions of the CROPPED constants.
+  See this issue for more details: https://github.com/chapmanu/dimensions/issues/29
+  */
+  const ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT = 800;
+  const ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT = 800;
+  const CROPPED_SMALL_IMAGE_WIDTH_LIMIT = 400;
+  const CROPPED_SMALL_IMAGE_HEIGHT_LIMIT = 400;
+
   var Resize = new function() {
 
     var $uploadCrop, $uploadedImage;
@@ -119,6 +130,26 @@ $(document).ready(function() {
       var urlCreator = window.URL || window.webkitURL;
       return urlCreator.createObjectURL(blob);
     }
+
+    this.enforceMaxImageSize = function() {
+      var smallCropRequested = ($("#user-height").val() <= CROPPED_SMALL_IMAGE_HEIGHT_LIMIT) &&
+                               ($("#user-width").val() <= CROPPED_SMALL_IMAGE_WIDTH_LIMIT);
+      var largeImageUploaded = Resize.originalHeight > ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT && 
+                               Resize.originalWidth > ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT;
+      var alertMessage = "This image is too large to resize without distortions.\n\n" +
+                         "You will need to resize the image to be no larger than " + 
+                         ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT + "x" + ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT + 
+                         " using a photo editor like Photoshop or GIMP.";
+
+      // Checks if the user selects dimensions that are less than or equal to "really small" image dimensions,
+      // and if the original dimensions are greater than the limit for cropping small images.
+      if ( smallCropRequested && largeImageUploaded ) {
+        alert(alertMessage);
+      }
+      else {
+        Resize.showResult();
+      }
+    }
   }
 
   $.getJSON("options.json", function(json) {
@@ -136,8 +167,8 @@ $(document).ready(function() {
 
   $(document).on('change', '#dimension_image_upload', function() { Resize.readFile(this); });
   $(document).on('change', '#resize-select', function() { Resize.fillDimensionFields(this); });
-  $(document).on('click', '.preview-result', function() { Resize.showResult(); });
   $(document).on('click', '.submit-btn', function(event) { Resize.downloadableResult(); });
+  $(document).on('click', '.preview-result', function() { Resize.enforceMaxImageSize(); });
 
   $(document).on('change', '#user-width, #user-height', function() {
     if($("#user-width").val() > Resize.originalWidth) $("#user-width").val(Resize.originalWidth);
