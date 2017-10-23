@@ -130,6 +130,26 @@ $(document).ready(function() {
       var urlCreator = window.URL || window.webkitURL;
       return urlCreator.createObjectURL(blob);
     }
+
+    this.enforceMaxImageSize = function() {
+      var smallCropRequested = ($("#user-height").val() <= CROPPED_SMALL_IMAGE_HEIGHT_LIMIT) &&
+                               ($("#user-width").val() <= CROPPED_SMALL_IMAGE_WIDTH_LIMIT);
+      var largeImageUploaded = Resize.originalHeight > ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT && 
+                               Resize.originalWidth > ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT;
+      var alertMessage = "This image is too large to resize without distortions.\n\n" +
+                         "You will need to resize the image to be no larger than " + 
+                         ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT + "x" + ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT + 
+                         " using a photo editor like Photoshop or GIMP.";
+
+      // Checks if the user selects dimensions that are less than or equal to "really small" image dimensions,
+      // and if the original dimensions are greater than the limit for cropping small images.
+      if ( smallCropRequested && largeImageUploaded ) {
+        alert(alertMessage);
+      }
+      else {
+        Resize.showResult();
+      }
+    }
   }
 
   $.getJSON("options.json", function(json) {
@@ -148,14 +168,7 @@ $(document).ready(function() {
   $(document).on('change', '#dimension_image_upload', function() { Resize.readFile(this); });
   $(document).on('change', '#resize-select', function() { Resize.fillDimensionFields(this); });
   $(document).on('click', '.submit-btn', function(event) { Resize.downloadableResult(); });
-  $(document).on('click', '.preview-result', '#user-width, #user-height', function() {
-    // Checks if the user selects dimensions that are less than or equal to "really small" image dimensions, and if the original dimensions are greater than the limit for cropping small images.
-    if (($("#user-height").val() <= CROPPED_SMALL_IMAGE_HEIGHT_LIMIT && $("#user-width").val() <= CROPPED_SMALL_IMAGE_WIDTH_LIMIT) && (Resize.originalHeight > ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT && Resize.originalWidth > ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT)) {
-      alert("This image is too large to resize without distortions.\n\nYou will need to resize the image to be no larger than " + ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT + "x" + ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT + " using a photo editor like Photoshop or GIMP.");
-    } else {
-      Resize.showResult();
-    }
-  });
+  $(document).on('click', '.preview-result', function() { Resize.enforceMaxImageSize(); });
 
   $(document).on('change', '#user-width, #user-height', function() {
     if($("#user-width").val() > Resize.originalWidth) $("#user-width").val(Resize.originalWidth);
