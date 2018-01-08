@@ -136,8 +136,8 @@ $(document).ready(function() {
                                ($("#user-width").val() <= CROPPED_SMALL_IMAGE_WIDTH_LIMIT);
       var largeImageUploaded = Resize.originalHeight > ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT && 
                                Resize.originalWidth > ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT;
-      var alertMessage = "This image is too large to resize without distortions.\n\n" +
-                         "You will need to resize the image to be no larger than " + 
+      var alertMessage = "WARNING: This image is too large to resize without distortions.\n\n" +
+                         "It is recommended to first resize the image to be no larger than " + 
                          ORIGINAL_SMALL_IMAGE_WIDTH_LIMIT + "x" + ORIGINAL_SMALL_IMAGE_HEIGHT_LIMIT + 
                          " using a photo editor like Photoshop or GIMP.";
 
@@ -146,9 +146,8 @@ $(document).ready(function() {
       if ( smallCropRequested && largeImageUploaded ) {
         alert(alertMessage);
       }
-      else {
-        Resize.showResult();
-      }
+
+      Resize.showResult();
     }
   }
 
