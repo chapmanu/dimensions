@@ -17,8 +17,10 @@ Run all tests:
 
 ### Deployment:
 Dimensions is hosted on GitHub pages which publishes from the `gh-pages` branch.
-After changes are pushed to the `master` branch, bring changes into `gh-pages` branch.
+After changes are merged into the `master` branch, bring changes into `gh-pages` branch.
 
+    # From the master brach:
+    git pull origin master
     git checkout gh-pages
-    git rebase master
+    git merge master
     git push origin gh-pages
