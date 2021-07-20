@@ -1,56 +1,52 @@
 {
   "Cascade": {
-    "Right Callout (206 x Custom)": {
-      "width": "206",
-      "height": ""
+    "Carousel (3:2 Ratio / 600px x 400px)": {
+      "width": "600",
+      "height": "400"
     },
-   "Primary WYSIWYG General (206 x Custom)": {
-      "width": "206",
-      "height": ""
+    "Grid - One and Four Column Landscape (3:2 Ratio / 600px x 400px)": {
+      "width": "600",
+      "height": "400"
     },
-    "Primary Carousel Region (960 x 540)": {
-      "width": "960",
-      "height": "540"
+    "Grid - Two and Three Column Landscape (16:9 Ratio / 900px x 506px)": {
+      "width": "900",
+      "height": "506"
     },
-    "Primary Personnel Region (120 x 150)": {
-      "width": "120",
+    "Logo Rotator (1:1 Ratio / 300px x 300px)": {
+      "width": "300",
+      "height": "300"
+    },
+    "Personnel Table - Square/Circle (1:1 Ratio / 300px x 300px)": {
+      "width": "300",
+      "height": "300"
+    },
+    "Personnel Table - Portrait (2:3 Ratio / 225px x 150px)": {
+      "width": "225",
       "height": "150"
     },
-    "Primary Funnel 1up (200 x 150)": {
-      "width": "200",
+    "Headshots - Square/Circle (1:1 Ratio / 300px x 300px)": {
+      "width": "300",
+      "height": "300"
+    },
+    "Headshots - Portrait (2:3 Ratio / 225px x 150px)": {
+      "width": "225",
       "height": "150"
     },
-    "Primary Funnel 2up (290 x 125)": {
-      "width": "290",
-      "height": "125"
+    "Text with CTA - Landscape (3:2 Ratio / 600px x 400px)": {
+      "width": "600",
+      "height": "400"
     },
-    "Primary & Right Sponsor Box (114 x 110)": {
-      "width": "114",
-      "height": "110"
+    "Text with CTA - Square (1:1 Ratio / 300px x 300px)": {
+      "width": "300",
+      "height": "300"
     },
-    "Primary & Left Featured Area (125 x 135)": {
-      "width": "125",
-      "height": "135"
+    "Callout Box (3:2 Ratio / 600px x 400px)": {
+      "width": "600",
+      "height": "400"
     },
-    "Masthead Slider (780 x 440)": {
-      "width": "780",
-      "height": "440"
-    },
-    "Masthead Boxes (266 x 220)": {
-      "width": "266",
-      "height": "220"
-    },
-    "Masthead Branded (780 x 260)": {
-      "width": "780",
-      "height": "260"
-    },
-    "Faculty Headshots Small (110 x 130)": {
-      "width": "110",
-      "height": "130"
-    },
-    "Faculty Headshots Large (195 x Custom)": {
-      "width": "195",
-      "height": ""
+    "Callout Box (16:9 Ratio / 900px x 506px)": {
+      "width": "900",
+      "height": "506"
     }
   },
 
@@ -92,56 +88,40 @@
   },
 
   "Newsletter": {
-    "Featured Story (260 x 165)": {
-      "width": "260",
-      "height": "165"
+    "Masthead (3:2 Ratio / 600px x 400px)": {
+      "width": "600",
+      "height": "400"
     },
-    "Announcement (260 x 165)": {
-      "width": "260",
-      "height": "165"
+    "Landscape Photos (3:2 Ratio / 600px x 400px)": {
+      "width": "600",
+      "height": "400"
     },
-    "Event (140 x 140)": {
-      "width": "140",
-      "height": "140"
+    "Landscape Photos (16:9 Ratio / 900px x 506px)": {
+      "width": "900",
+      "height": "506"
     },
-    "Beyond Chapman (175 x 175)": {
-      "width": "175",
-      "height": "175"
-    },
-    "Instagram (155 x 155)": {
-      "width": "155",
-      "height": "155"
+    "Square Photo (1:1 Ratio / 300px x 300px)": {
+      "width": "300",
+      "height": "300"
     }
   },
 
   "Facebook": {
-    "Cover Photo (820 x 312)": {
-      "width": "820",
-      "height": "312"
-    },
-    "Profile Picture (180 x 180)": {
-      "width": "180",
-      "height": "180"
-    },
-    "Image (1200 x 630)": {
+    "Photo Post (1.91:1 Ratio / 1200px x 630px)": {
       "width": "1200",
       "height": "630"
     },
-    "Link Image (1230 x 627)": {
-      "width": "1230",
-      "height": "627"
+    "Video Post (16:9 Ratio / 1289px x 720px)": {
+      "width": "1289",
+      "height": "720"
     },
-    "Portrait (Custom x 470)": {
-      "width": "",
-      "height": "470"
+    "Linked Image (1.91:1 Ratio / 1200px x 630px)": {
+      "width": "1200",
+      "height": "630"
     },
-    "Landscape (470 x Custom)": {
-      "width": "470",
-      "height": ""
-    },
-    "Event Image (1920 x 1080)": {
-      "width": "1920",
-      "height": "1080"
+    "Stories (16:9 Ratio / 1080px x 1920px)": {
+      "width": "1080",
+      "height": "1920"
     }
   },
 
@@ -161,21 +141,25 @@
   },
 
   "Instagram": {
-    "Profile (110 x 110)": {
+    "Profile (1:1 Ratio / 110px x 110px)": {
       "width": "110",
       "height": "110"
     },
-    "Square (1080 x 1080)": {
+    "Square (1:1 Ratio / 1080px x 1080px)": {
       "width": "1080",
       "height": "1080"
     },
-    "Portrait (Custom x 1080)": {
+    "Portrait (1.91:1 Ratio / Custom[566px to 1350px] x 1080px)": {
       "width": "",
       "height": "1080"
     },
-    "Landscape (1080 x Custom)": {
+    "Landscape (1.91:1 Ratio / 1080px x Custom[566px to 1350px])": {
       "width": "1080",
       "height": ""
+    },
+    "Stories (16:9 Ratio / 1080px x 1920px)": {
+      "width": "1080",
+      "height": "1920"
     }
   },
 
