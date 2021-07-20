@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "The one stop shop for all things related to image resizing on the Chapman University website network",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "mocha": "^9.0.2"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "grunt": "^1.0.1",
