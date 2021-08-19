@@ -32,9 +32,9 @@
       "width": "600",
       "height": "600"
     },
-    "Headshots - Portrait (2:3 Ratio / 225px x 150px)": {
-      "width": "225",
-      "height": "150"
+    "Headshots - Portrait (2:3 Ratio /  150px x 225px)": {
+      "width": "150",
+      "height": "225"
     },
     "Headshots - Square/Circle (1:1 Ratio / 300px x 300px)": {
       "width": "300",
@@ -56,9 +56,9 @@
       "width": "780",
       "height": "260"
     },
-    "Personnel Table - Portrait (2:3 Ratio / 225px x 150px)": {
-      "width": "225",
-      "height": "150"
+    "Personnel Table - Portrait (2:3 Ratio / 150px x 225px)": {
+      "width": "150",
+      "height": "225"
     },
     "Personnel Table - Square/Circle (1:1 Ratio / 300px x 300px)": {
       "width": "300",
