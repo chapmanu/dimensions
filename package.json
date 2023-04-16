@@ -4,7 +4,7 @@
   "description": "The one stop shop for all things related to image resizing on the Chapman University website network",
   "main": "index.js",
   "dependencies": {
-    "mocha": "^9.0.2"
+    "mocha": "^9.2.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
